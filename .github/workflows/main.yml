@@ -22,5 +22,5 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            leesxs/marvel-dex:${{ github.run_number }}
+            leesxs/marvel-dex:v${{ github.run_number }}
             leesxs/marvel-dex:latest
