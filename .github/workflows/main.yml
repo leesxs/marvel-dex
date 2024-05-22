@@ -24,3 +24,12 @@ jobs:
           tags: |
             leesxs/marvel-dex:v${{ github.run_number }}
             leesxs/marvel-dex:latest
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy no Azure Web App"
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: marveldex
+          publish-profile: ${{ secrets.AZUREWEBAPP_PUBLISH_PROFILE }}
+          images: leesxs/marvel-dex:v${{ github.run_number }}
